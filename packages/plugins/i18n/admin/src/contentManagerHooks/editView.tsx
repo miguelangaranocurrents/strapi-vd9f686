@@ -100,11 +100,12 @@ interface LabelActionProps {
 
 const LabelAction = ({ title }: LabelActionProps) => {
   const { formatMessage } = useIntl();
+  const message = formatMessage(title);
 
   return (
-    <Span tag="span" title={title}>
-      <VisuallyHidden tag="span">{formatMessage(title)}</VisuallyHidden>
-      <Tooltip label={formatMessage(title)}>
+    <Span tag="span" title={message}>
+      <VisuallyHidden tag="span">{message}</VisuallyHidden>
+      <Tooltip label={message}>
         <Earth aria-hidden focusable={false} />
       </Tooltip>
     </Span>
